@@ -2,8 +2,6 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "downlevelIteration": true,

@@ -1,3 +1,0 @@
-{
-  "extends": [ "./.dist/eslint/eslint-base", "./.dist/eslint/eslint-ts" ]
-}

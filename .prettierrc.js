@@ -1,3 +1,5 @@
+const { prettier } = require('./.dist/index.cjs');
+
 module.exports = {
-  ...require('./.dist/prettier/prettier-base'),
+  ...prettier().base,
 };

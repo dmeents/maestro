@@ -39,7 +39,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash", "npm:4.14.182"],\
             ["@typescript-eslint/eslint-plugin", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:5.30.5"],\
             ["@typescript-eslint/parser", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:5.30.5"],\
-            ["ansi-styles", "npm:6.1.0"],\
             ["esbuild", "npm:0.14.48"],\
             ["esbuild-node-externals", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:1.4.1"],\
             ["eslint", "npm:8.19.0"],\
@@ -1184,13 +1183,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["ansi-styles", "npm:4.3.0"],\
             ["color-convert", "npm:2.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:6.1.0", {\
-          "packageLocation": "./.yarn/cache/ansi-styles-npm-6.1.0-4f6a594d04-7a7f8528c0.zip/node_modules/ansi-styles/",\
-          "packageDependencies": [\
-            ["ansi-styles", "npm:6.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4540,7 +4532,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/lodash", "npm:4.14.182"],\
             ["@typescript-eslint/eslint-plugin", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:5.30.5"],\
             ["@typescript-eslint/parser", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:5.30.5"],\
-            ["ansi-styles", "npm:6.1.0"],\
             ["esbuild", "npm:0.14.48"],\
             ["esbuild-node-externals", "virtual:7662fb6eb22e064fce7fce314f5208ddc271bd50344d631538d18f91b216d0a8a9b6ceae5cc974ab66b6b0be8a3de72cbdd510307f632ea226b481587db76515#npm:1.4.1"],\
             ["eslint", "npm:8.19.0"],\

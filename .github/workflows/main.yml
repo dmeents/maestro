@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18.5.0
 
       - name: Enable Corepack
         run: corepack enable
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Yarn Caching
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18.5.0
           cache: 'yarn'
 
       - name: Yarn Install ${{ inputs.projectname }}
@@ -52,7 +52,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18.5.0
 
       - name: Enable Corepack
         run: corepack enable
@@ -60,7 +60,7 @@ jobs:
       - name: Setup Yarn Caching
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18.5.0
           cache: 'yarn'
 
       - name: Get built artifact

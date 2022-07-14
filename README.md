@@ -23,7 +23,7 @@ const { eslint } = require('@dmeents/maestro');
 module.exports = { ...eslint({ enableTypescript: true }) };
 
 // linting for javascript projects
-module.exports = { ...eslint() }; // without typescript support
+module.exports = { ...eslint() }; 
 ```
 
 ```javascript

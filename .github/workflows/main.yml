@@ -25,7 +25,7 @@ jobs:
           node-version: 18.5.0
           cache: 'yarn'
 
-      - name: Yarn Install ${{ inputs.projectname }}
+      - name: Yarn Install
         run: yarn install
 
       - name: Build Package

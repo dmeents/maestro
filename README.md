@@ -13,7 +13,7 @@ projects. Got tired of all the boilerplate every time I started a new project, s
 npm install @dmeents/maestro
 ```
 
-### Usage
+### Usage - .js files
 
 ```javascript
 // .eslintrc.js
@@ -47,11 +47,10 @@ module.exports = { ...semantic().single.local };
 module.exports = { ...semantic().monorepo.publish };
 ```
 
+### Usage - tsconfig.json
+
 ```json
-// tsconfig.json
-// TODO: verify this works 😂
 {
   "extends": "@dmeents/maestro/typescript/tsconfig-base.json"
-  // ... other options here
 }
 ```

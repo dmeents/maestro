@@ -58,7 +58,7 @@ esbuild
 esbuild
   .build({
     entryPoints: ['src/index.ts'],
-    outfile: './.dist/index.es.js',
+    outfile: './.dist/index.esm.js',
     bundle: true,
     sourcemap: true,
     minify: true,

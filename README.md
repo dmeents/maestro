@@ -49,8 +49,9 @@ module.exports = { ...semantic().monorepo.publish };
 
 ### Usage - tsconfig.json
 
-```json
-{
-  "extends": "@dmeents/maestro/typescript/tsconfig-base.json"
-}
-```
+Due to [this issue](https://github.com/microsoft/TypeScript/issues/30400) not ever getting resolved
+(or an answer), extending tsconfig.json from a node_module isn't possible. You have to
+just [go here](https://github.com/dmeents/maestro/tree/main/src/typescript) and
+copy the file contents that you wish to add to your own tsconfig.json file.
+
+[Get Typescript Config Files](https://github.com/dmeents/maestro/tree/main/src/typescript)

@@ -23,7 +23,7 @@
   "packageManager": "yarn@3.2.1",
   "scripts": {
     "build": "rimraf .dist && tsc && node ./esbuild.js",
-    "publish": "semantic-release --dry-run"
+    "publish": "semantic-release"
   },
   "dependencies": {
     "lodash": "^4.17.21"

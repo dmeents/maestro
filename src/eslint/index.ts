@@ -1,7 +1,9 @@
 const base = {
   extends: ['airbnb', 'airbnb/hooks', 'prettier'],
   plugins: ['react', 'prettier'],
-  rules: {},
+  rules: {
+    'import/prefer-default-export': 0,
+  },
 };
 
 const typescript = {

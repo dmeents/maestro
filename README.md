@@ -34,7 +34,7 @@ module.exports = { ...prettier().base };
 
 ```javascript
 // release.config.js
-const { semantic } = require('./.dist/index.cjs');
+const { semantic } = require('@dmeents/maestro');
 
 // for single repositories and if you want to publish the dist to npm, use this 
 module.exports = { ...semantic().single.publish };

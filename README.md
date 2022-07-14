@@ -10,7 +10,8 @@ projects. Got tired of all the boilerplate every time I started a new project, s
 ### Install
 
 ```bash
-npm install @dmeents/maestro
+npm install --dev @dmeents/maestro
+yarn add --dev @dmeents/maestro
 ```
 
 ### Usage - .js files

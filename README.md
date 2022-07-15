@@ -4,7 +4,7 @@
 > use case, and could be non-standard. You're welcome to use it, but it's not really
 > intended as a configuration solution for the masses.
 
-This is a repository for shared project configs like eslint, typescript, prettier, etc across my
+This is a repository for shared project configs like eslint, prettier, etc across my
 projects. Got tired of all the boilerplate every time I started a new project, so here we go!
 
 ### Install
@@ -47,12 +47,3 @@ module.exports = { ...semantic().monorepo.local };
 module.exports = { ...semantic().single.local };
 module.exports = { ...semantic().monorepo.publish };
 ```
-
-### Usage - tsconfig.json
-
-Due to [this issue](https://github.com/microsoft/TypeScript/issues/30400) not ever getting resolved
-(or an answer), extending tsconfig.json from a node_module isn't possible. You have to
-just [go here](https://github.com/dmeents/maestro/tree/main/src/typescript) and
-copy the file contents that you wish to add to your own tsconfig.json file.
-
-[Get Typescript Config Files](https://github.com/dmeents/maestro/tree/main/src/typescript)

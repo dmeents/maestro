@@ -17,16 +17,6 @@ const semanticReleaseFiles = fs
   .filter(src => src.endsWith('.ts'))
   .map(i => `./src/semantic-release/${i}`);
 
-// make directories
-fs.mkdirSync('./.dist/typescript/');
-
-// copy tsconfig files
-fs.readdirSync('src/typescript')
-  .filter(src => src.endsWith('.json'))
-  .map(i =>
-    fs.copyFileSync(`./src/typescript/${i}`, `./.dist/typescript/${i}`),
-  );
-
 // build cjs files
 esbuild
   .build({

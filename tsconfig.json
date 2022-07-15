@@ -1,6 +1,20 @@
 {
-  "extends": "./src/typescript/tsconfig-base.json",
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
     "emitDeclarationOnly": true,
     "baseUrl": ".",
     "outDir": ".dist"

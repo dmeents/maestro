@@ -20,7 +20,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.2",
   "scripts": {
     "build": "rimraf .dist && tsc && node ./esbuild.js",
     "publish": "semantic-release"

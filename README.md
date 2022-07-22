@@ -30,20 +30,11 @@ module.exports = { ...eslint() };
 ```javascript
 // prettierrc.js
 const { prettier } = require('@dmeents/maestro');
-module.exports = { ...prettier().base };
+module.exports = { ...prettier() };
 ```
 
 ```javascript
 // release.config.js
 const { semantic } = require('@dmeents/maestro');
-
-// for single repositories and if you want to publish the dist to npm, use this 
-module.exports = { ...semantic().single.publish };
-
-// for monorepo repositories and if you don't want to publish, use this
-module.exports = { ...semantic().monorepo.local };
-
-// these can be used in any combination
-module.exports = { ...semantic().single.local };
-module.exports = { ...semantic().monorepo.publish };
+module.exports = { ...semantic({ isMonorepo: true, publishToNpm: true }) };
 ```

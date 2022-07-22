@@ -18,10 +18,10 @@ const typescript = {
 };
 
 interface Config {
-  enableTypescript: boolean;
+  enableTypescript?: boolean;
 }
 
-export default function eslint({ enableTypescript }: Config) {
+export default function eslint({ enableTypescript = false }: Config) {
   const baseConfig = { ...base };
 
   if (!enableTypescript) return baseConfig;

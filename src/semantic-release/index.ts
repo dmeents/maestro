@@ -1,8 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 interface SemanticReleaseConfig {
-  isMonorepo: boolean;
-  publishToNpm: boolean;
-  branches: Array<string>;
+  isMonorepo?: boolean;
+  publishToNpm?: boolean;
+  branches?: Array<string>;
 }
 
 export default function semanticRelease({

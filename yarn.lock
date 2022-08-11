@@ -88,6 +88,7 @@ __metadata:
     "@semantic-release/git": 10.0.1
     "@semantic-release/github": 8.0.5
     "@semantic-release/npm": 9.0.1
+    "@suin/semantic-release-yarn": ^1.1.0
     "@types/lodash": 4.14.182
     "@typescript-eslint/eslint-plugin": 5.32.0
     "@typescript-eslint/parser": 5.32.0
@@ -644,6 +645,18 @@ __metadata:
   peerDependencies:
     semantic-release: ">=18.0.0-beta.1"
   checksum: 0237e7e6ebf41b7c6a72eea704b007442cfd05910ded7059235a5684a0e4a233b2ca3c3e39923901131e7f0a4dcb5e95737af469081529acc393223c04715505
+  languageName: node
+  linkType: hard
+
+"@suin/semantic-release-yarn@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@suin/semantic-release-yarn@npm:1.1.0"
+  dependencies:
+    "@semantic-release/error": ^3.0.0
+    execa: ^5.1.1
+    read-pkg: 5.2.0
+    semver: ^7.3.5
+  checksum: f336b57029531370b6c4aeea6a1787f1f3a4b30180ccc810a1faa1edd0379b305269f49d4f985a3ac6eeec4f4b15c682c9133430e782edaa686b6417b6a9976f
   languageName: node
   linkType: hard
 
@@ -2416,7 +2429,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^5.0.0":
+"execa@npm:^5.0.0, execa@npm:^5.1.1":
   version: 5.1.1
   resolution: "execa@npm:5.1.1"
   dependencies:
@@ -4966,7 +4979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"read-pkg@npm:^5.0.0, read-pkg@npm:^5.2.0":
+"read-pkg@npm:5.2.0, read-pkg@npm:^5.0.0, read-pkg@npm:^5.2.0":
   version: 5.2.0
   resolution: "read-pkg@npm:5.2.0"
   dependencies:

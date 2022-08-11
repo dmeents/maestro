@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/git", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
             ["@semantic-release/npm", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:9.0.1"],\
+            ["@suin/semantic-release-yarn", "npm:1.1.0"],\
             ["@types/lodash", "npm:4.14.182"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.32.0"],\
             ["@typescript-eslint/parser", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.32.0"],\
@@ -137,6 +138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/git", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:10.0.1"],\
             ["@semantic-release/github", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:8.0.5"],\
             ["@semantic-release/npm", "virtual:c91fcd356d35829ced3f9cafcb7d70217b01982491547be46dbf92a34cc1c6f47f5022ecefa553004a9375335550e06b2a45e10dc96f6aba8aa030dc26a07d30#npm:9.0.1"],\
+            ["@suin/semantic-release-yarn", "npm:1.1.0"],\
             ["@types/lodash", "npm:4.14.182"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.32.0"],\
             ["@typescript-eslint/parser", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.32.0"],\
@@ -829,6 +831,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/semantic-release",\
             "semantic-release"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@suin/semantic-release-yarn", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/@suin-semantic-release-yarn-npm-1.1.0-5e94b3f50e-f336b57029.zip/node_modules/@suin/semantic-release-yarn/",\
+          "packageDependencies": [\
+            ["@suin/semantic-release-yarn", "npm:1.1.0"],\
+            ["@semantic-release/error", "npm:3.0.0"],\
+            ["execa", "npm:5.1.1"],\
+            ["read-pkg", "npm:5.2.0"],\
+            ["semver", "npm:7.3.7"]\
           ],\
           "linkType": "HARD"\
         }]\

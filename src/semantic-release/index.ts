@@ -16,7 +16,7 @@ export default function semanticRelease({
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
-      ['@semantic-release/npm', { npmPublish: publishToNpm }],
+      ['@suin/semantic-release-yarn', { publish: publishToNpm }],
       [
         '@semantic-release/git',
         {

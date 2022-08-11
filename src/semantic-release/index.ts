@@ -26,8 +26,8 @@ export default function semanticRelease({
     '@semantic-release/release-notes-generator',
   ];
 
-  plugins.push(gitPlugin);
   if (publishToNpm) plugins.push(npmPlugin);
+  plugins.push(gitPlugin);
   plugins.push(githubPlugin);
 
   return {

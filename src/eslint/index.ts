@@ -3,6 +3,7 @@ const base = {
   plugins: ['react', 'prettier'],
   rules: {
     'import/prefer-default-export': 0,
+    'no-plusplus': 0,
   },
 };
 

@@ -16,11 +16,14 @@ export default function semanticRelease({
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
-      ['@suin/semantic-release-yarn', { npmPublish: publishToNpm }],
+      [
+        '@suin/semantic-release-yarn',
+        { npmPublish: publishToNpm, tarballDir: 'dist' },
+      ],
       [
         '@semantic-release/git',
         {
-          assets: ['package.json'],
+          assets: ['package.json', 'dist/**/*'],
           message:
             'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
         },

@@ -16,10 +16,7 @@ export default function semanticRelease({
     plugins: [
       '@semantic-release/commit-analyzer',
       '@semantic-release/release-notes-generator',
-      [
-        '@suin/semantic-release-yarn',
-        { npmPublish: publishToNpm, tarballDir: 'dist' },
-      ],
+      ['@suin/semantic-release-yarn', { npmPublish: publishToNpm }],
       [
         '@semantic-release/git',
         {
@@ -28,7 +25,7 @@ export default function semanticRelease({
             'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
         },
       ],
-      ['@semantic-release/github', { assets: 'dist/*.tgz' }],
+      ['@semantic-release/github', { assets: './*.tgz' }],
     ],
   };
 }

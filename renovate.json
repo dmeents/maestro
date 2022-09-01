@@ -5,11 +5,12 @@
     ":semanticPrefixFixDepsChoreOthers",
     ":ignoreModulesAndTests",
     ":autodetectPinVersions",
-    ":prHourlyLimit2",
-    ":prConcurrentLimit10",
+    ":prHourlyLimit4",
+    ":prConcurrentLimitNone",
     "group:monorepos",
     "group:recommended",
     "group:allNonMajor",
-    "workarounds:all"
+    "workarounds:all",
+    "automergeAll"
   ]
 }

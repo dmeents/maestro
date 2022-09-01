@@ -9,7 +9,6 @@
     ":prHourlyLimit4",
     ":semanticPrefixFixDepsChoreOthers",
     "group:allNonMajor",
-    "group:monorepos",
     "group:recommended",
     "workarounds:all"
   ]

@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Package
-        uses: '../src/github-actions/build-standard.yml'
+        uses: './src/github-actions/build-standard.yml'
         with:
           packageName: 'maestro'
 

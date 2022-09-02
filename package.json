@@ -23,7 +23,7 @@
   "packageManager": "yarn@3.2.3",
   "scripts": {
     "build": "rimraf .dist && tsc && node ./esbuild.js",
-    "publish": "semantic-release"
+    "release": "semantic-release"
   },
   "dependencies": {
     "@suin/semantic-release-yarn": "^1.1.0",

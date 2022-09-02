@@ -60,4 +60,4 @@ runs:
     - name: Release Package
       shell: bash
       run: |
-        NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn publish
+        NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn release

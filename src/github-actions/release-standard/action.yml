@@ -13,6 +13,12 @@ inputs:
     description: 'is project a monorepo?'
     required: false
     default: 'false'
+  npmToken:
+    description: 'the npm token to publish packages to npm'
+    required: true
+  githubToken:
+    description: 'the github token required to push package changes to github'
+    required: true
 
 runs:
   using: 'composite'
@@ -54,4 +60,4 @@ runs:
     - name: Release Package
       shell: bash
       run: |
-        NPM_TOKEN=${{ secrets.NPM_TOKEN }} GH_TOKEN=${{ secrets.GH_TOKEN }} yarn publish
+        NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn publish

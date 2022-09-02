@@ -21,3 +21,5 @@ jobs:
         uses: './src/github-actions/release-standard'
         with:
           packageName: 'maestro'
+          npmToken: ${{ secrets.NPM_TOKEN }}
+          githubToken: ${{ secrets.GH_TOKEN }}

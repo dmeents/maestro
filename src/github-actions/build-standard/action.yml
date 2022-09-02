@@ -37,12 +37,12 @@ runs:
       run: yarn install
 
     - name: Build ${{ inputs.packageName }}
-      if: ${{ inputs.isMonorepo == 'undefined' }}
+      if: ${{ inputs.namespace == 'undefined' }}
       shell: bash
       run: yarn build
 
     - name: Build ${{ inputs.packageName }} in monorepo
-      if: ${{ inputs.isMonorepo != 'undefined' }}
+      if: ${{ inputs.namespace != 'undefined' }}
       shell: bash
       run: yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} build
 

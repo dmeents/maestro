@@ -44,14 +44,14 @@ runs:
         cache: 'yarn'
 
     - name: Get built artifact
-      if: ${{ inputs.isMonorepo == 'undefined' }}
+      if: ${{ inputs.namespace == 'undefined' }}
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: .dist
 
     - name: Get built artifact for ${{ inputs.packageName }} in monorepo
-      if: ${{ inputs.isMonorepo != 'undefined' }}
+      if: ${{ inputs.namespace != 'undefined' }}
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}

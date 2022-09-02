@@ -1,5 +1,5 @@
-name: 'Build Standard'
-description: 'standardized build job'
+name: 'Release Standard'
+description: 'standardized release job'
 
 inputs:
   packageName:
@@ -17,6 +17,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
@@ -32,32 +37,21 @@ runs:
         node-version: ${{ inputs.nodeVersion }}
         cache: 'yarn'
 
-    - name: Yarn Install
-      shell: bash
-      run: yarn install
-
-    - name: Build ${{ inputs.packageName }}
+    - name: Get built artifact
       if: ${{ inputs.isMonorepo == 'false' }}
-      shell: bash
-      run: yarn build
-
-    - name: Build ${{ inputs.packageName }} in monorepo
-      if: ${{ inputs.isMonorepo == 'true' }}
-      shell: bash
-      run: yarn workspace ${{ inputs.packageName }} build
-
-    - name: Save build artifact
-      uses: actions/upload-artifact@master
-      if: ${{ inputs.isMonorepo == 'false' }}
+      uses: actions/download-artifact@master
       with:
-        if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: .dist
 
-    - name: Save build artifact for ${{ inputs.packageName }} in monorepo
-      uses: actions/upload-artifact@master
+    - name: Get built artifact for ${{ inputs.packageName }} in monorepo
       if: ${{ inputs.isMonorepo == 'true' }}
+      uses: actions/download-artifact@master
       with:
-        if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: packages/${{ inputs.packageName }}/.dist
+
+    - name: Release Package
+      shell: bash
+      run: |
+        NPM_TOKEN=${{ secrets.NPM_TOKEN }} GH_TOKEN=${{ secrets.GH_TOKEN }} yarn publish

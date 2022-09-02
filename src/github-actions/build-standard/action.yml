@@ -9,10 +9,10 @@ inputs:
     description: 'which node version to use'
     required: false
     default: 'latest'
-  isMonorepo:
-    description: 'is project a monorepo?'
+  namespace:
+    description: 'the monorepo namespace'
     required: false
-    default: 'false'
+    default: 'undefined'
 
 runs:
   using: 'composite'
@@ -37,18 +37,18 @@ runs:
       run: yarn install
 
     - name: Build ${{ inputs.packageName }}
-      if: ${{ inputs.isMonorepo == 'false' }}
+      if: ${{ inputs.isMonorepo == 'undefined' }}
       shell: bash
       run: yarn build
 
     - name: Build ${{ inputs.packageName }} in monorepo
-      if: ${{ inputs.isMonorepo == 'true' }}
+      if: ${{ inputs.isMonorepo != 'undefined' }}
       shell: bash
-      run: yarn workspace ${{ inputs.packageName }} build
+      run: yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} build
 
     - name: Save build artifact
       uses: actions/upload-artifact@master
-      if: ${{ inputs.isMonorepo == 'false' }}
+      if: ${{ inputs.namespace == 'undefined' }}
       with:
         if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
@@ -56,7 +56,7 @@ runs:
 
     - name: Save build artifact for ${{ inputs.packageName }} in monorepo
       uses: actions/upload-artifact@master
-      if: ${{ inputs.isMonorepo == 'true' }}
+      if: ${{ inputs.namespace != 'undefined' }}
       with:
         if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}

@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Package
-        uses: './src/github-actions/build-standard'
+        uses: ./src/github-actions/build-standard
         with:
           packageName: 'maestro'
 
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Publish Package
-        uses: './src/github-actions/release-standard'
+        uses: ./src/github-actions/release-standard
         with:
           packageName: 'maestro'
           npmToken: ${{ secrets.NPM_TOKEN }}

@@ -9,10 +9,10 @@ inputs:
     description: 'which node version to use'
     required: false
     default: 'latest'
-  isMonorepo:
-    description: 'is project a monorepo?'
+  namespace:
+    description: 'the monorepo namespace'
     required: false
-    default: 'false'
+    default: 'undefined'
   npmToken:
     description: 'the npm token to publish packages to npm'
     required: true
@@ -44,14 +44,14 @@ runs:
         cache: 'yarn'
 
     - name: Get built artifact
-      if: ${{ inputs.isMonorepo == 'false' }}
+      if: ${{ inputs.isMonorepo == 'undefined' }}
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: .dist
 
     - name: Get built artifact for ${{ inputs.packageName }} in monorepo
-      if: ${{ inputs.isMonorepo == 'true' }}
+      if: ${{ inputs.isMonorepo != 'undefined' }}
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}

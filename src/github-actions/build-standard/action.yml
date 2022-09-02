@@ -12,7 +12,7 @@ inputs:
   isMonorepo:
     description: 'is project a monorepo?'
     required: false
-    default: false
+    default: 'false'
 
 runs:
   using: 'composite'
@@ -37,12 +37,12 @@ runs:
       run: yarn install
 
     - name: Build ${{ inputs.packageName }}
-      if: ${{ inputs.isMonorepo == false }}
+      if: ${{ inputs.isMonorepo == 'false' }}
       shell: bash
       run: yarn build
 
     - name: Build package ${{ inputs.packageName }}
-      if: ${{ inputs.isMonorepo == true }}
+      if: ${{ inputs.isMonorepo == 'true' }}
       shell: bash
       run: yarn workspace ${{ inputs.packageName }} build
 

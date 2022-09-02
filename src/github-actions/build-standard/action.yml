@@ -23,6 +23,7 @@ runs:
         node-version: ${{ inputs.nodeVersion }}
 
     - name: Enable Corepack
+      shell: bash
       run: corepack enable
 
     - name: Setup Yarn Caching
@@ -32,14 +33,17 @@ runs:
         cache: 'yarn'
 
     - name: Yarn Install
+      shell: bash
       run: yarn install
 
     - name: Build ${{ inputs.packageName }}
       if: ${{ inputs.isMonorepo == false }}
+      shell: bash
       run: yarn build
 
     - name: Build package ${{ inputs.packageName }}
       if: ${{ inputs.isMonorepo == true }}
+      shell: bash
       run: yarn workspace ${{ inputs.packageName }} build
 
     - name: Save build artifact

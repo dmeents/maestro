@@ -57,11 +57,18 @@ runs:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: packages/${{ inputs.packageName }}/.dist
 
-    - name: Yarn Install
+    - name: Yarn install
       shell: bash
       run: yarn install
 
-    - name: Release Package
+    - name: Release package
+      if: ${{ inputs.namespace == 'undefined' }}
       shell: bash
       run: |
         NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn release
+
+    - name: Release package ${{ inputs.packageName }} in monorepo
+      if: ${{ inputs.namespace != 'undefined' }}
+      shell: bash
+      run: |
+        NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} release

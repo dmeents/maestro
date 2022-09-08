@@ -57,6 +57,10 @@ runs:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: packages/${{ inputs.packageName }}/.dist
 
+    - name: Yarn Install
+      shell: bash
+      run: yarn install
+
     - name: Release Package
       shell: bash
       run: |

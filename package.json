@@ -1,6 +1,6 @@
 {
   "name": "@dmeents/maestro",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Library for shared project configs like eslint, typescript, prettier, etc",
   "repository": "https://github.com/dmeents/maestro.git",
   "author": "David Meents <david@allido.io>",

@@ -66,5 +66,4 @@ runs:
       if: ${{ inputs.namespace != 'undefined' }}
       shell: bash
       run: |
-        git pull --rebase --autostash
         NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} release

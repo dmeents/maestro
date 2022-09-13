@@ -1,5 +1,6 @@
 name: 'Build Standard'
 description: 'standardized build job'
+author: 'david@allido.io'
 
 inputs:
   packageName:

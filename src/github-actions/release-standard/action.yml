@@ -1,5 +1,6 @@
 name: 'Release Standard'
 description: 'standardized release job'
+author: 'david@allido.io'
 
 inputs:
   packageName:

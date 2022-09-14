@@ -1,9 +1,0 @@
-59d066327bb921d69bac9e5971234727
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-describe('eslint config', () => {
-    it('should not fail', () => {
-        expect(true).toEqual(true);
-    });
-});
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxkbWVlblxcRG9jdW1lbnRzXFxHaXRIdWJcXG1hZXN0cm9cXHNyY1xcZXNsaW50XFxpbmRleC50ZXN0LnRzIiwibWFwcGluZ3MiOiI7O0FBQUEsUUFBUSxDQUFDLGVBQWUsRUFBRSxHQUFHLEVBQUU7SUFDN0IsRUFBRSxDQUFDLGlCQUFpQixFQUFFLEdBQUcsRUFBRTtRQUN6QixNQUFNLENBQUMsSUFBSSxDQUFDLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQzdCLENBQUMsQ0FBQyxDQUFDO0FBQ0wsQ0FBQyxDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxkbWVlblxcRG9jdW1lbnRzXFxHaXRIdWJcXG1hZXN0cm9cXHNyY1xcZXNsaW50XFxpbmRleC50ZXN0LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImRlc2NyaWJlKCdlc2xpbnQgY29uZmlnJywgKCkgPT4ge1xuICBpdCgnc2hvdWxkIG5vdCBmYWlsJywgKCkgPT4ge1xuICAgIGV4cGVjdCh0cnVlKS50b0VxdWFsKHRydWUpO1xuICB9KTtcbn0pO1xuXG5leHBvcnQge307XG4iXSwidmVyc2lvbiI6M30=

@@ -1,9 +1,0 @@
-1201cafc796555e4df364fb5ba260c9f
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-describe('eslint', () => {
-    it('should not fail', () => {
-        expect(true).toEqual(true);
-    });
-});
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiQzpcXFVzZXJzXFxkbWVlblxcRG9jdW1lbnRzXFxHaXRIdWJcXG1hZXN0cm9cXHNyY1xcZXNsaW50XFxpbmRleC50ZXN0LnRzIiwibWFwcGluZ3MiOiI7O0FBQUEsUUFBUSxDQUFDLFFBQVEsRUFBRSxHQUFHLEVBQUU7SUFDdEIsRUFBRSxDQUFDLGlCQUFpQixFQUFFLEdBQUcsRUFBRTtRQUN6QixNQUFNLENBQUMsSUFBSSxDQUFDLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQzdCLENBQUMsQ0FBQyxDQUFDO0FBQ0wsQ0FBQyxDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxkbWVlblxcRG9jdW1lbnRzXFxHaXRIdWJcXG1hZXN0cm9cXHNyY1xcZXNsaW50XFxpbmRleC50ZXN0LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImRlc2NyaWJlKCdlc2xpbnQnLCAoKSA9PiB7XG4gIGl0KCdzaG91bGQgbm90IGZhaWwnLCAoKSA9PiB7XG4gICAgZXhwZWN0KHRydWUpLnRvRXF1YWwodHJ1ZSk7XG4gIH0pO1xufSk7XG5cbmV4cG9ydCB7fTtcbiJdLCJ2ZXJzaW9uIjozfQ==

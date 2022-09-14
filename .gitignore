@@ -13,3 +13,4 @@
 # jest
 coverage
 junit.xml
+.jest-cache

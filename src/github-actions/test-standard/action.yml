@@ -20,6 +20,12 @@ runs:
       shell: bash
       run: corepack enable
 
+    - name: Setup Yarn
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.nodeVersion }}
+        cache: 'yarn'
+
     - name: Yarn Install
       shell: bash
       run: yarn install

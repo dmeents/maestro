@@ -2,16 +2,8 @@ name: main
 on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Test Package
-        uses: ./src/github-actions/test-standard
-
   build:
     runs-on: ubuntu-latest
-    needs: [ test ]
     steps:
       - uses: actions/checkout@v3
       - name: Build Package
@@ -19,9 +11,23 @@ jobs:
         with:
           packageName: 'maestro'
 
-  publish:
+  #  test runs after build in maestro so it can have the built jest config to use
+  test:
     runs-on: ubuntu-latest
     needs: [ build ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get built artifact
+        uses: actions/download-artifact@master
+        with:
+          name: maestro-build-${{ github.sha }}
+          path: .dist
+      - name: Test Package
+        uses: ./src/github-actions/test-standard
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [ test ]
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3

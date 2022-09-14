@@ -27,7 +27,7 @@ runs:
       shell: bash
       run: corepack enable
 
-    - name: Setup Yarn Caching
+    - name: Setup Yarn
       uses: actions/setup-node@v3
       with:
         node-version: ${{ inputs.nodeVersion }}

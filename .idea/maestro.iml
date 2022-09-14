@@ -7,8 +7,11 @@
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/dist" />
       <excludeFolder url="file://$MODULE_DIR$/.dist" />
+      <excludeFolder url="file://$MODULE_DIR$/coverage" />
+      <excludePattern pattern="yarn.lock" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/jest" level="application" />
   </component>
 </module>

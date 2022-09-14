@@ -1,5 +1,5 @@
 const base = {
-  extends: ['airbnb', 'airbnb/hooks', 'prettier'],
+  extends: ['airbnb', 'prettier'],
   plugins: ['react', 'prettier'],
   rules: {
     'import/prefer-default-export': 0,
@@ -7,39 +7,32 @@ const base = {
     'no-restricted-syntax': 0,
     'no-await-in-loop': 0,
   },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 };
 
 const typescript = {
-  extends: ['airbnb-typescript'],
-  plugins: ['@typescript-eslint'],
+  extends: [...base.extends, 'airbnb-typescript'],
+  plugins: [...base.plugins, '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
     createDefaultProgram: true,
   },
-  rules: {},
+  rules: { ...base.rules },
+  settings: { ...base.settings },
 };
 
-interface Config {
+interface EslintConfig {
   isTypescript?: boolean;
 }
 
-export default function eslint({ isTypescript = false }: Config) {
-  const baseConfig = { ...base };
-
-  if (!isTypescript) return baseConfig;
-
-  const {
-    extends: tsExtends,
-    rules: tsRules,
-    plugins: tsPlugins,
-    ...other
-  } = typescript;
-
-  return {
-    ...other,
-    extends: [...baseConfig.extends, ...tsExtends],
-    plugins: [...baseConfig.plugins, ...tsPlugins],
-    rules: { ...baseConfig.rules, ...tsRules },
-  };
+export default function eslint({ isTypescript = false }: EslintConfig) {
+  if (isTypescript) return typescript;
+  return base;
 }

@@ -1,0 +1,259 @@
+5ccc72dcda96cc862fa232e05883dd8f
+"use strict";
+
+/* istanbul ignore next */
+function cov_2goyl45p3k() {
+  var path = "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\semantic-release\\index.ts";
+  var hash = "a3e29b9c2579c85febf8b11ee8f9f9633c072c25";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\semantic-release\\index.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 4
+        },
+        end: {
+          line: 20,
+          column: 6
+        }
+      },
+      "2": {
+        start: {
+          line: 22,
+          column: 0
+        },
+        end: {
+          line: 22,
+          column: 34
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "semanticRelease",
+        decl: {
+          start: {
+            line: 3,
+            column: 9
+          },
+          end: {
+            line: 3,
+            column: 24
+          }
+        },
+        loc: {
+          start: {
+            line: 3,
+            column: 93
+          },
+          end: {
+            line: 21,
+            column: 1
+          }
+        },
+        line: 3
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 3,
+            column: 27
+          },
+          end: {
+            line: 3,
+            column: 45
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 3,
+            column: 40
+          },
+          end: {
+            line: 3,
+            column: 45
+          }
+        }],
+        line: 3
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 3,
+            column: 47
+          },
+          end: {
+            line: 3,
+            column: 67
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 3,
+            column: 62
+          },
+          end: {
+            line: 3,
+            column: 67
+          }
+        }],
+        line: 3
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 3,
+            column: 69
+          },
+          end: {
+            line: 3,
+            column: 88
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 3,
+            column: 80
+          },
+          end: {
+            line: 3,
+            column: 88
+          }
+        }],
+        line: 3
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 6,
+            column: 17
+          },
+          end: {
+            line: 6,
+            column: 64
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 6,
+            column: 30
+          },
+          end: {
+            line: 6,
+            column: 59
+          }
+        }, {
+          start: {
+            line: 6,
+            column: 62
+          },
+          end: {
+            line: 6,
+            column: 64
+          }
+        }],
+        line: 6
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0],
+      "1": [0],
+      "2": [0],
+      "3": [0, 0]
+    },
+    inputSourceMap: {
+      file: "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\semantic-release\\index.ts",
+      mappings: ";;AAOA,SAAwB,eAAe,CAAC,EACtC,UAAU,GAAG,KAAK,EAClB,YAAY,GAAG,KAAK,EACpB,QAAQ,GAAG,CAAC,MAAM,CAAC,GACG;IACtB,OAAO;QACL,QAAQ;QACR,OAAO,EAAE,UAAU,CAAC,CAAC,CAAC,CAAC,2BAA2B,CAAC,CAAC,CAAC,CAAC,EAAE;QACxD,OAAO,EAAE;YACP,mCAAmC;YACnC,2CAA2C;YAC3C,CAAC,6BAA6B,EAAE,EAAE,UAAU,EAAE,YAAY,EAAE,CAAC;YAC7D;gBACE,uBAAuB;gBACvB;oBACE,MAAM,EAAE,CAAC,cAAc,EAAE,WAAW,CAAC;oBACrC,OAAO,EACL,0EAA0E;iBAC7E;aACF;YACD,CAAC,0BAA0B,EAAE,EAAE,MAAM,EAAE,SAAS,EAAE,CAAC;SACpD;KACF,CAAC;AACJ,CAAC;AAvBD,kCAuBC",
+      names: [],
+      sources: ["C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\semantic-release\\index.ts"],
+      sourcesContent: ["/* eslint-disable no-template-curly-in-string */\ninterface SemanticReleaseConfig {\n  isMonorepo?: boolean;\n  publishToNpm?: boolean;\n  branches?: Array<string>;\n}\n\nexport default function semanticRelease({\n  isMonorepo = false,\n  publishToNpm = false,\n  branches = ['main'],\n}: SemanticReleaseConfig) {\n  return {\n    branches,\n    extends: isMonorepo ? ['semantic-release-monorepo'] : [],\n    plugins: [\n      '@semantic-release/commit-analyzer',\n      '@semantic-release/release-notes-generator',\n      ['@suin/semantic-release-yarn', { npmPublish: publishToNpm }],\n      [\n        '@semantic-release/git',\n        {\n          assets: ['package.json', 'dist/**/*'],\n          message:\n            'chore(release): ${nextRelease.version} [skip ci]\\n\\n${nextRelease.notes}',\n        },\n      ],\n      ['@semantic-release/github', { assets: './*.tgz' }],\n    ],\n  };\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "a3e29b9c2579c85febf8b11ee8f9f9633c072c25"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2goyl45p3k = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2goyl45p3k();
+cov_2goyl45p3k().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function semanticRelease({
+  isMonorepo =
+  /* istanbul ignore next */
+  (cov_2goyl45p3k().b[0][0]++, false),
+  publishToNpm =
+  /* istanbul ignore next */
+  (cov_2goyl45p3k().b[1][0]++, false),
+  branches =
+  /* istanbul ignore next */
+  (cov_2goyl45p3k().b[2][0]++, ['main'])
+}) {
+  /* istanbul ignore next */
+  cov_2goyl45p3k().f[0]++;
+  cov_2goyl45p3k().s[1]++;
+  return {
+    branches,
+    extends: isMonorepo ?
+    /* istanbul ignore next */
+    (cov_2goyl45p3k().b[3][0]++, ['semantic-release-monorepo']) :
+    /* istanbul ignore next */
+    (cov_2goyl45p3k().b[3][1]++, []),
+    plugins: ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', ['@suin/semantic-release-yarn', {
+      npmPublish: publishToNpm
+    }], ['@semantic-release/git', {
+      assets: ['package.json', 'dist/**/*'],
+      message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+    }], ['@semantic-release/github', {
+      assets: './*.tgz'
+    }]]
+  };
+}
+
+/* istanbul ignore next */
+cov_2goyl45p3k().s[2]++;
+exports.default = semanticRelease;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBT0EsU0FBd0JBLGVBQXhCLENBQXdDO0VBQ3RDQyxVQUFVO0VBQUE7RUFBQSw2QkFBRyxLQUFILENBRDRCO0VBRXRDQyxZQUFZO0VBQUE7RUFBQSw2QkFBRyxLQUFILENBRjBCO0VBR3RDQyxRQUFRO0VBQUE7RUFBQSw2QkFBRyxDQUFDLE1BQUQsQ0FBSDtBQUg4QixDQUF4QyxFQUl3QjtFQUFBO0VBQUE7RUFBQTtFQUN0QixPQUFPO0lBQ0xBLFFBREs7SUFFTEMsT0FBTyxFQUFFSCxVQUFVO0lBQUE7SUFBQSw2QkFBRyxDQUFDLDJCQUFELENBQUg7SUFBQTtJQUFBLDZCQUFtQyxFQUFuQyxDQUZkO0lBR0xJLE9BQU8sRUFBRSxDQUNQLG1DQURPLEVBRVAsMkNBRk8sRUFHUCxDQUFDLDZCQUFELEVBQWdDO01BQUVDLFVBQVUsRUFBRUo7SUFBZCxDQUFoQyxDQUhPLEVBSVAsQ0FDRSx1QkFERixFQUVFO01BQ0VLLE1BQU0sRUFBRSxDQUFDLGNBQUQsRUFBaUIsV0FBakIsQ0FEVjtNQUVFQyxPQUFPLEVBQ0w7SUFISixDQUZGLENBSk8sRUFZUCxDQUFDLDBCQUFELEVBQTZCO01BQUVELE1BQU0sRUFBRTtJQUFWLENBQTdCLENBWk87RUFISixDQUFQO0FBa0JEOzs7O0FBdkJERSIsIm5hbWVzIjpbInNlbWFudGljUmVsZWFzZSIsImlzTW9ub3JlcG8iLCJwdWJsaXNoVG9OcG0iLCJicmFuY2hlcyIsImV4dGVuZHMiLCJwbHVnaW5zIiwibnBtUHVibGlzaCIsImFzc2V0cyIsIm1lc3NhZ2UiLCJleHBvcnRzIl0sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxkbWVlblxcRG9jdW1lbnRzXFxHaXRIdWJcXG1hZXN0cm9cXHNyY1xcc2VtYW50aWMtcmVsZWFzZVxcaW5kZXgudHMiXSwic291cmNlc0NvbnRlbnQiOlsiLyogZXNsaW50LWRpc2FibGUgbm8tdGVtcGxhdGUtY3VybHktaW4tc3RyaW5nICovXG5pbnRlcmZhY2UgU2VtYW50aWNSZWxlYXNlQ29uZmlnIHtcbiAgaXNNb25vcmVwbz86IGJvb2xlYW47XG4gIHB1Ymxpc2hUb05wbT86IGJvb2xlYW47XG4gIGJyYW5jaGVzPzogQXJyYXk8c3RyaW5nPjtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gc2VtYW50aWNSZWxlYXNlKHtcbiAgaXNNb25vcmVwbyA9IGZhbHNlLFxuICBwdWJsaXNoVG9OcG0gPSBmYWxzZSxcbiAgYnJhbmNoZXMgPSBbJ21haW4nXSxcbn06IFNlbWFudGljUmVsZWFzZUNvbmZpZykge1xuICByZXR1cm4ge1xuICAgIGJyYW5jaGVzLFxuICAgIGV4dGVuZHM6IGlzTW9ub3JlcG8gPyBbJ3NlbWFudGljLXJlbGVhc2UtbW9ub3JlcG8nXSA6IFtdLFxuICAgIHBsdWdpbnM6IFtcbiAgICAgICdAc2VtYW50aWMtcmVsZWFzZS9jb21taXQtYW5hbHl6ZXInLFxuICAgICAgJ0BzZW1hbnRpYy1yZWxlYXNlL3JlbGVhc2Utbm90ZXMtZ2VuZXJhdG9yJyxcbiAgICAgIFsnQHN1aW4vc2VtYW50aWMtcmVsZWFzZS15YXJuJywgeyBucG1QdWJsaXNoOiBwdWJsaXNoVG9OcG0gfV0sXG4gICAgICBbXG4gICAgICAgICdAc2VtYW50aWMtcmVsZWFzZS9naXQnLFxuICAgICAgICB7XG4gICAgICAgICAgYXNzZXRzOiBbJ3BhY2thZ2UuanNvbicsICdkaXN0LyoqLyonXSxcbiAgICAgICAgICBtZXNzYWdlOlxuICAgICAgICAgICAgJ2Nob3JlKHJlbGVhc2UpOiAke25leHRSZWxlYXNlLnZlcnNpb259IFtza2lwIGNpXVxcblxcbiR7bmV4dFJlbGVhc2Uubm90ZXN9JyxcbiAgICAgICAgfSxcbiAgICAgIF0sXG4gICAgICBbJ0BzZW1hbnRpYy1yZWxlYXNlL2dpdGh1YicsIHsgYXNzZXRzOiAnLi8qLnRneicgfV0sXG4gICAgXSxcbiAgfTtcbn1cbiJdfQ==

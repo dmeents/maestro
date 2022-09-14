@@ -10,34 +10,21 @@ const baseConfig = (
     reporters: ['default', 'jest-junit'],
     transformIgnorePatterns: [
       '<rootDir>/node_modules/',
-      'dist',
+      '.dist',
       'setupTests.js',
     ],
-    collectCoverageFrom: ['<rootDir>/packages/*/src/**/*.{ts,tsx,js,jsx}'],
+    collectCoverageFrom: ['<rootDir>/src/**/*.{ts,tsx}'],
     coverageDirectory: '<rootDir>/coverage/',
-    coveragePathIgnorePatterns: [
-      'node_modules',
-      '.stories.{tsx,ts,js,jsx}',
-      '.d.ts',
-      '.dao.ts',
-      '.dist/',
-      '.dto.ts',
-      '.interface.ts',
-      '.lib/',
-      '.schema.{ts,js}',
-      '.styles.{ts,js}',
-    ],
   };
 
   if (namespace) {
-    config.moduleNameWrapper = {
-      [`^@${namespace}/(.*)$`]: '<rootDir>/packages/$1',
-    };
+    config.moduleNameWrapper = { [`^@${namespace}/(.*)$`]: './packages/$1' };
   }
 
   if (tsconfig) {
-    config.globals['ts-jest'] = { tsconfig };
-    config.preset = 'ts-jest/presets/js-with-ts';
+    config.transform = {
+      '\\.tsx?$': ['ts-jest', { tsconfig }],
+    };
   }
 
   return config;
@@ -47,31 +34,32 @@ const directoryConfigs = (packageName: string, namespace?: string) => {
   if (namespace) {
     return {
       rootDir: '../../',
-      roots: [`<rootDir>/packages/${packageName}`],
-      testRegex: `(<rootDir>packages/${packageName}/.*/__tests__/.*|\\.(test|spec))\\.{tsx,ts,js,jsx}?$`,
+      roots: [`./packages/${packageName}`],
+      testRegex: `./packages/${packageName}/*.{tsx,ts,js,jsx}`,
     };
   }
 
-  return {
-    rootDir: '.',
-    roots: [`<rootDir>`],
-    testRegex: `(<rootDir>/.*/__tests__/.*|\\.(test|spec))\\.{tsx,ts,js,jsx}?$`,
-  };
+  return {};
 };
 
 const rootConfig = (namespace?: string) => {
   if (namespace) {
-    return { projects: ['<rootDir>/packages/*/jest.config.js'] };
+    return { projects: ['./packages/*/jest.config.js'] };
   }
 
   return {};
 };
 
 interface JestConfig {
+  // the name of the package to test
   packageName: string;
+  // is this the root config (in a monorepo)
   isRoot?: boolean;
+  // should this run in an node or jsdom environment
   isNode?: boolean;
+  // the namespace of the monorepo (determines if this config is for monorepos)
   namespace?: string;
+  // the path to the tsconfig (only for typescript)
   tsconfig?: string;
 }
 

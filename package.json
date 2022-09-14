@@ -22,18 +22,19 @@
   },
   "packageManager": "yarn@3.2.3",
   "scripts": {
-    "build": "rimraf .dist && tsc && node ./esbuild.js",
-    "release": "semantic-release"
-  },
-  "dependencies": {
-    "@suin/semantic-release-yarn": "^1.1.0",
-    "lodash": "^4.17.21"
+    "build": "rm -rf ./.dist && tsc --project tsconfig.build.json && node ./esbuild.js",
+    "release": "semantic-release",
+    "test": "jest",
+    "test:coverage": "jest --coverage -ci --bail --silent --forceExit"
   },
   "devDependencies": {
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.6",
     "@semantic-release/npm": "9.0.1",
+    "@suin/semantic-release-yarn": "^1.1.0",
+    "@types/jest": "^29.0.2",
     "@types/lodash": "4.14.185",
+    "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "5.37.0",
     "@typescript-eslint/parser": "5.37.0",
     "esbuild": "0.15.7",
@@ -52,7 +53,6 @@
     "jest-environment-jsdom": "^29.0.3",
     "jest-junit": "^14.0.1",
     "prettier": "2.7.1",
-    "rimraf": "3.0.2",
     "semantic-release": "19.0.5",
     "ts-jest": "^29.0.1",
     "typescript": "4.8.3"

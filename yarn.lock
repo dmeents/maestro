@@ -465,7 +465,9 @@ __metadata:
     "@semantic-release/github": 8.0.6
     "@semantic-release/npm": 9.0.1
     "@suin/semantic-release-yarn": ^1.1.0
+    "@types/jest": ^29.0.2
     "@types/lodash": 4.14.185
+    "@types/node": ^18.7.18
     "@typescript-eslint/eslint-plugin": 5.37.0
     "@typescript-eslint/parser": 5.37.0
     esbuild: 0.15.7
@@ -483,9 +485,7 @@ __metadata:
     jest: ^29.0.3
     jest-environment-jsdom: ^29.0.3
     jest-junit: ^14.0.1
-    lodash: ^4.17.21
     prettier: 2.7.1
-    rimraf: 3.0.2
     semantic-release: 19.0.5
     ts-jest: ^29.0.1
     typescript: 4.8.3
@@ -1483,6 +1483,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:^29.0.2":
+  version: 29.0.2
+  resolution: "@types/jest@npm:29.0.2"
+  dependencies:
+    expect: ^29.0.0
+    pretty-format: ^29.0.0
+  checksum: 27c46b58fad9791adf88167ba2c14ae3513cb1fe5df038faafe7fc4513ebb230dd8029a1dd0acd1abeb82aa014839ac10e0dcf1bfae9fcc0e69bc1eb1e5204f0
+  languageName: node
+  linkType: hard
+
 "@types/jsdom@npm:^20.0.0":
   version: 20.0.0
   resolution: "@types/jsdom@npm:20.0.0"
@@ -1522,7 +1532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^18.7.18":
   version: 18.7.18
   resolution: "@types/node@npm:18.7.18"
   checksum: 8aec61f0f96e2a69ce51f1f40f949ca578bbb4fe05d7c0b8ce3aeeb848e90f755837f17f6ac132ca404d974fe9b2974150ad3b4984fc9dc7c3ceddb10bae0167
@@ -3701,7 +3711,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect@npm:^29.0.3":
+"expect@npm:^29.0.0, expect@npm:^29.0.3":
   version: 29.0.3
   resolution: "expect@npm:29.0.3"
   dependencies:
@@ -6956,7 +6966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.0.3":
+"pretty-format@npm:^29.0.0, pretty-format@npm:^29.0.3":
   version: 29.0.3
   resolution: "pretty-format@npm:29.0.3"
   dependencies:
@@ -7390,7 +7400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:3.0.2, rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
+"rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:

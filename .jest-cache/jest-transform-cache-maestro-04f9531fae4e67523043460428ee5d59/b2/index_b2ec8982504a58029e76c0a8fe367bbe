@@ -1,0 +1,130 @@
+8e70db88ad9ccc3f09ae1278ed51f43d
+"use strict";
+
+/* istanbul ignore next */
+function cov_2pqo6n2f07() {
+  var path = "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\prettier\\index.ts";
+  var hash = "82282aae1f0e0fe2ba78ba8b522dfed928860cf0";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\prettier\\index.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 4
+        },
+        end: {
+          line: 11,
+          column: 6
+        }
+      },
+      "2": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 27
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "prettier",
+        decl: {
+          start: {
+            line: 3,
+            column: 9
+          },
+          end: {
+            line: 3,
+            column: 17
+          }
+        },
+        loc: {
+          start: {
+            line: 3,
+            column: 20
+          },
+          end: {
+            line: 12,
+            column: 1
+          }
+        },
+        line: 3
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\prettier\\index.ts",
+      mappings: ";;AAAA,SAAwB,QAAQ;IAC9B,OAAO;QACL,WAAW,EAAE,OAAO;QACpB,kBAAkB,EAAE,IAAI;QACxB,WAAW,EAAE,IAAI;QACjB,aAAa,EAAE,KAAK;QACpB,cAAc,EAAE,IAAI;QACpB,UAAU,EAAE,YAAY;KACzB,CAAC;AACJ,CAAC;AATD,2BASC",
+      names: [],
+      sources: ["C:\\Users\\dmeen\\Documents\\GitHub\\maestro\\src\\prettier\\index.ts"],
+      sourcesContent: ["export default function prettier() {\n  return {\n    arrowParens: 'avoid',\n    jsxBracketSameLine: true,\n    singleQuote: true,\n    trailingComma: 'all',\n    bracketSpacing: true,\n    quoteProps: 'consistent',\n  };\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "82282aae1f0e0fe2ba78ba8b522dfed928860cf0"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2pqo6n2f07 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2pqo6n2f07();
+cov_2pqo6n2f07().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function prettier() {
+  /* istanbul ignore next */
+  cov_2pqo6n2f07().f[0]++;
+  cov_2pqo6n2f07().s[1]++;
+  return {
+    arrowParens: 'avoid',
+    jsxBracketSameLine: true,
+    singleQuote: true,
+    trailingComma: 'all',
+    bracketSpacing: true,
+    quoteProps: 'consistent'
+  };
+}
+
+/* istanbul ignore next */
+cov_2pqo6n2f07().s[2]++;
+exports.default = prettier;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsU0FBd0JBLFFBQXhCLEdBQWdDO0VBQUE7RUFBQTtFQUFBO0VBQzlCLE9BQU87SUFDTEMsV0FBVyxFQUFFLE9BRFI7SUFFTEMsa0JBQWtCLEVBQUUsSUFGZjtJQUdMQyxXQUFXLEVBQUUsSUFIUjtJQUlMQyxhQUFhLEVBQUUsS0FKVjtJQUtMQyxjQUFjLEVBQUUsSUFMWDtJQU1MQyxVQUFVLEVBQUU7RUFOUCxDQUFQO0FBUUQ7Ozs7QUFUREMiLCJuYW1lcyI6WyJwcmV0dGllciIsImFycm93UGFyZW5zIiwianN4QnJhY2tldFNhbWVMaW5lIiwic2luZ2xlUXVvdGUiLCJ0cmFpbGluZ0NvbW1hIiwiYnJhY2tldFNwYWNpbmciLCJxdW90ZVByb3BzIiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcZG1lZW5cXERvY3VtZW50c1xcR2l0SHViXFxtYWVzdHJvXFxzcmNcXHByZXR0aWVyXFxpbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBwcmV0dGllcigpIHtcbiAgcmV0dXJuIHtcbiAgICBhcnJvd1BhcmVuczogJ2F2b2lkJyxcbiAgICBqc3hCcmFja2V0U2FtZUxpbmU6IHRydWUsXG4gICAgc2luZ2xlUXVvdGU6IHRydWUsXG4gICAgdHJhaWxpbmdDb21tYTogJ2FsbCcsXG4gICAgYnJhY2tldFNwYWNpbmc6IHRydWUsXG4gICAgcXVvdGVQcm9wczogJ2NvbnNpc3RlbnQnLFxuICB9O1xufVxuIl19

@@ -1,0 +1,35 @@
+name: 'Test Standard'
+description: 'standardized test job'
+author: 'david@allido.io'
+
+inputs:
+  nodeVersion:
+    description: 'which node version to use'
+    required: false
+    default: 'latest'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.nodeVersion }}
+
+    - name: Enable Corepack
+      shell: bash
+      run: corepack enable
+
+    - name: Setup Yarn Caching
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.nodeVersion }}
+        cache: 'yarn'
+
+    - name: Yarn Install
+      shell: bash
+      run: yarn install
+
+    - name: Run tests
+      shell: bash
+      run: yarn test:coverage

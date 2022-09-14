@@ -21,13 +21,13 @@ const typescript = {
 };
 
 interface Config {
-  enableTypescript?: boolean;
+  isTypescript?: boolean;
 }
 
-export default function eslint({ enableTypescript = false }: Config) {
+export default function eslint({ isTypescript = false }: Config) {
   const baseConfig = { ...base };
 
-  if (!enableTypescript) return baseConfig;
+  if (!isTypescript) return baseConfig;
 
   const {
     extends: tsExtends,

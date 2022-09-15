@@ -1,38 +1,41 @@
-const base = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['react', 'prettier'],
-  rules: {
-    'import/prefer-default-export': 0,
-    'no-plusplus': 0,
-    'no-restricted-syntax': 0,
-    'no-await-in-loop': 0,
-  },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-  },
-};
+const base = (isReact: boolean) => ({
+  extends: [
+    'eslint:recommended',
+    isReact ? 'plugin:react/recommended' : '',
+    'prettier',
+  ],
+  plugins: ['prettier'],
+  rules: {},
+});
 
-const typescript = {
-  extends: [...base.extends, 'airbnb-typescript'],
-  plugins: [...base.plugins, '@typescript-eslint'],
+const typescript = (tsconfigRootDir: string, isReact: boolean) => ({
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    isReact ? 'plugin:react/recommended' : '',
+    'prettier',
+  ],
+  plugins: [...base(isReact).plugins, '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    tsconfigRootDir,
     project: './tsconfig.json',
     createDefaultProgram: true,
   },
-  rules: { ...base.rules },
-  settings: { ...base.settings },
-};
+  rules: { ...base(isReact).rules },
+});
 
 interface EslintConfig {
   isTypescript?: boolean;
+  isReact?: boolean;
+  tsConfigRootDir?: string;
 }
 
-export default function eslint({ isTypescript = false }: EslintConfig) {
-  if (isTypescript) return typescript;
-  return base;
+export default function eslint({
+  isTypescript = false,
+  isReact = false,
+  tsConfigRootDir = '.',
+}: EslintConfig) {
+  return isTypescript ? typescript(tsConfigRootDir, isReact) : base(isReact);
 }

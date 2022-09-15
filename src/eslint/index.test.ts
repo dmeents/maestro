@@ -1,7 +1,8 @@
+import eslintConfig from './index';
+
 describe('eslint', () => {
   it('should not fail', () => {
-    expect(true).toEqual(true);
+    const result = eslintConfig({});
+    expect(result).not.toBeNull();
   });
 });
-
-export {};

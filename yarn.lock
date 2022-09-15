@@ -437,7 +437,7 @@ __metadata:
     "@semantic-release/github": 8.0.6
     "@semantic-release/npm": 9.0.1
     "@suin/semantic-release-yarn": 1.1.0
-    "@types/jest": ^29.0.2
+    "@types/jest": 29.0.2
     "@types/lodash": 4.14.185
     "@types/node": 18.7.18
     "@typescript-eslint/eslint-plugin": 5.37.0
@@ -1449,7 +1449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.0.2":
+"@types/jest@npm:29.0.2":
   version: 29.0.2
   resolution: "@types/jest@npm:29.0.2"
   dependencies:

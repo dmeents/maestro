@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:8.0.6"],\
             ["@semantic-release/npm", "virtual:93ff9e54e7e85ba03f8777529e2e31fd687b3208f0bfd29f9526626fccebedcf25fd704ae938492bcd5692d38a16927bd020804d445cde5885dc772e9e1e1ff9#npm:9.0.1"],\
             ["@suin/semantic-release-yarn", "npm:1.1.0"],\
-            ["@types/jest", "npm:29.0.2"],\
+            ["@types/jest", "npm:29.0.3"],\
             ["@types/lodash", "npm:4.14.185"],\
             ["@types/node", "npm:18.7.18"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.37.0"],\
@@ -858,7 +858,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@semantic-release/github", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:8.0.6"],\
             ["@semantic-release/npm", "virtual:93ff9e54e7e85ba03f8777529e2e31fd687b3208f0bfd29f9526626fccebedcf25fd704ae938492bcd5692d38a16927bd020804d445cde5885dc772e9e1e1ff9#npm:9.0.1"],\
             ["@suin/semantic-release-yarn", "npm:1.1.0"],\
-            ["@types/jest", "npm:29.0.2"],\
+            ["@types/jest", "npm:29.0.3"],\
             ["@types/lodash", "npm:4.14.185"],\
             ["@types/node", "npm:18.7.18"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9c5c0fb2bbdea8291ff52cc6f3fd2d7899dec0d7d9f5ceaa9cb1d9c151aeeebcea1698f0f370874a9e7b48d0c7c675d141ddd2cbce9bc3ca2c73ea3ca0db45ee#npm:5.37.0"],\
@@ -2076,10 +2076,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/jest", [\
-        ["npm:29.0.2", {\
-          "packageLocation": "./.yarn/cache/@types-jest-npm-29.0.2-633da80e03-27c46b58fa.zip/node_modules/@types/jest/",\
+        ["npm:29.0.3", {\
+          "packageLocation": "./.yarn/cache/@types-jest-npm-29.0.3-3116a436db-14a8ec1954.zip/node_modules/@types/jest/",\
           "packageDependencies": [\
-            ["@types/jest", "npm:29.0.2"],\
+            ["@types/jest", "npm:29.0.3"],\
             ["expect", "npm:29.0.3"],\
             ["pretty-format", "npm:29.0.3"]\
           ],\
@@ -9464,7 +9464,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],\
             ["@types/babel__core", null],\
             ["@types/esbuild", null],\
-            ["@types/jest", "npm:29.0.2"],\
+            ["@types/jest", "npm:29.0.3"],\
             ["@types/jest__types", null],\
             ["@types/typescript", null],\
             ["babel-jest", null],\

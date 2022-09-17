@@ -1,5 +1,5 @@
 const baseConfig = (
-  packageName: string,
+  packageName?: string,
   namespace?: string,
   tsconfig?: string,
 ) => {
@@ -18,7 +18,7 @@ const baseConfig = (
   };
 
   if (namespace) {
-    config.moduleNameWrapper = { [`^@${namespace}/(.*)$`]: './packages/$1' };
+    config.moduleNameMapper = { [`^@${namespace}/(.*)$`]: './packages/$1' };
   }
 
   if (tsconfig) {
@@ -30,8 +30,8 @@ const baseConfig = (
   return config;
 };
 
-const directoryConfigs = (packageName: string, namespace?: string) => {
-  if (namespace) {
+const directoryConfigs = (packageName?: string, namespace?: string) => {
+  if (namespace && packageName) {
     return {
       rootDir: '../../',
       roots: [`./packages/${packageName}`],
@@ -52,7 +52,7 @@ const rootConfig = (namespace?: string) => {
 
 interface JestConfig {
   // the name of the package to test
-  packageName: string;
+  packageName?: string;
   // is this the root config (in a monorepo)
   isRoot?: boolean;
   // should this run in an node or jsdom environment

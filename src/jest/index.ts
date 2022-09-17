@@ -2,7 +2,10 @@ const baseConfig = (
   packageName?: string,
   namespace?: string,
   tsconfig?: string,
+  isRoot?: boolean,
 ) => {
+  if (isRoot) return {};
+
   const config: any = {
     cacheDirectory: '.jest-cache',
     id: packageName,
@@ -42,8 +45,8 @@ const directoryConfigs = (packageName?: string, namespace?: string) => {
   return {};
 };
 
-const rootConfig = (namespace?: string) => {
-  if (namespace) {
+const rootConfig = (isRoot: boolean, namespace?: string) => {
+  if (namespace && isRoot) {
     return { projects: ['./packages/*/jest.config.js'] };
   }
 
@@ -70,9 +73,8 @@ export default function jest({
   tsconfig,
   isNode,
 }: JestConfig) {
-  if (isRoot) return rootConfig(namespace);
-
   return {
+    ...rootConfig(isRoot, namespace),
     ...baseConfig(packageName, namespace, tsconfig),
     ...directoryConfigs(packageName, namespace),
     testEnvironment: isNode ? 'node' : 'jsdom',

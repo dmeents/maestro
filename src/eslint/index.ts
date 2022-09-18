@@ -2,10 +2,15 @@ const base = (isReact: boolean) => ({
   extends: [
     'eslint:recommended',
     isReact ? 'plugin:react/recommended' : '',
+    'plugin:jest/recommended',
     'prettier',
   ],
-  plugins: ['prettier'],
+  plugins: ['jest', 'prettier'],
   rules: {},
+  env: {
+    'node': true,
+    'jest/globals': true,
+  },
 });
 
 const typescript = (tsconfigRootDir: string, isReact: boolean) => ({
@@ -14,6 +19,7 @@ const typescript = (tsconfigRootDir: string, isReact: boolean) => ({
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     isReact ? 'plugin:react/recommended' : '',
+    'plugin:jest/recommended',
     'prettier',
   ],
   plugins: [...base(isReact).plugins, '@typescript-eslint'],
@@ -23,7 +29,12 @@ const typescript = (tsconfigRootDir: string, isReact: boolean) => ({
     project: './tsconfig.json',
     createDefaultProgram: true,
   },
-  rules: { ...base(isReact).rules },
+  rules: {
+    ...base(isReact).rules,
+    '@typescript-eslint/ban-ts-comment': 0,
+    '@typescript-eslint/no-var-requires': 0,
+  },
+  env: { ...base(isReact).env },
 });
 
 interface EslintConfig {

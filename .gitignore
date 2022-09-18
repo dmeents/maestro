@@ -14,3 +14,6 @@
 coverage
 junit.xml
 .jest-cache
+
+# node modules
+node_modules

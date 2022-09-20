@@ -1,3 +1,5 @@
+import { ParserOptions } from '@typescript-eslint/parser';
+
 const base = (isReact: boolean) => ({
   extends: [
     'eslint:recommended',
@@ -33,6 +35,7 @@ const typescript = (tsconfigRootDir: string, isReact: boolean) => ({
     ...base(isReact).rules,
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
   env: { ...base(isReact).env },
 });
@@ -43,10 +46,19 @@ interface EslintConfig {
   tsConfigRootDir?: string;
 }
 
+interface EslintReturnConfig {
+  extends: Array<string>;
+  plugins: Array<string>;
+  parser?: string;
+  parserOptions?: ParserOptions;
+  rules: { [key: string]: any };
+  env: { [key: string]: any };
+}
+
 export default function eslint({
   isTypescript = false,
   isReact = false,
   tsConfigRootDir = '.',
-}: EslintConfig) {
+}: EslintConfig): EslintReturnConfig {
   return isTypescript ? typescript(tsConfigRootDir, isReact) : base(isReact);
 }

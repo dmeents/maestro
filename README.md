@@ -8,7 +8,7 @@
 
 > This is just _my_ preferred configuration so it will change frequently, might not work for your
 > use case, and could be non-standard. You're welcome to use it, but it's not really
-> intended as a configuration solution for the masses.
+> intended as a configuration solution for everyone.
 
 This is a repository for shared project configs like eslint, prettier, etc across my
 projects. Got tired of all the boilerplate every time I started a new project, so here we go!
@@ -43,4 +43,10 @@ module.exports = { ...prettier() };
 // release.config.js
 const { semantic } = require('@dmeents/maestro');
 module.exports = { ...semantic({ isMonorepo: true, publishToNpm: true }) };
+```
+
+```javascript
+// jest.config.js
+const { jest } = require('@dmeents/maestro');
+module.exports = { ...jest({ packageName: 'maestro', isNode: true, tsconfig: 'tsconfig.json' }) }
 ```

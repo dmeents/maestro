@@ -1,3 +1,4 @@
+// @ts-ignore
 import * as Maestro from './index';
 
 describe('Maestro', () => {

@@ -2,6 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/@dmeents/maestro?style=flat-square)
 ![npm](https://img.shields.io/npm/dw/@dmeents/maestro?style=flat-square)
+[![codecov](https://codecov.io/gh/dmeents/maestro/branch/main/graph/badge.svg?token=VNX7UY2V2R)](https://codecov.io/gh/dmeents/maestro)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dmeents/maestro/main?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/dmeents/maestro?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/dmeents/maestro?style=flat-square)

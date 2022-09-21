@@ -10,6 +10,7 @@ const baseConfig = (
     id: packageName,
     displayName: packageName,
     reporters: ['default', 'jest-junit'],
+    modulePathIgnorePatterns: ['.dist'],
     transformIgnorePatterns: [
       '<rootDir>/node_modules/',
       '.dist',

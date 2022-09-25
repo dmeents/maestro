@@ -3,6 +3,9 @@ description: 'standardized test job'
 author: 'david@allido.io'
 
 inputs:
+  testSuite:
+    description: 'the test suite to run'
+    required: true
   nodeVersion:
     description: 'which node version to use'
     required: false
@@ -31,8 +34,10 @@ runs:
       run: yarn install
 
     - name: Run tests
+      if: ${{ inputs.testSuite == 'jest' }}
       shell: bash
       run: yarn test:coverage
 
     - name: Upload coverage reports to Codecov
+      if: ${{ inputs.testSuite == 'jest' }}
       uses: codecov/codecov-action@v3

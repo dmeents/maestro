@@ -54,6 +54,7 @@ runs:
         if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: .dist
+        retention-days: 5
 
     - name: Save build artifact for ${{ inputs.packageName }} in monorepo
       uses: actions/upload-artifact@master
@@ -62,3 +63,4 @@ runs:
         if-no-files-found: ignore
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: packages/${{ inputs.packageName }}/.dist
+        retention-days: 5

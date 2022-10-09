@@ -30,6 +30,9 @@ yarn add -D eslint eslint-config-prettier eslint-plugin-jest eslint-plugin-prett
 
 # also add for react apps
 yarn add -D eslint-plugin-react
+
+# also add for typescript apps
+yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 ```javascript

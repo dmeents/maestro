@@ -108,7 +108,7 @@ module.exports = { ...semantic(options) };
 # dependencies
 
 # for all projects
-yarn add -D @types/jest jest jest-environment-jsdom
+yarn add -D @types/jest jest jest-environment-jsdom jest-junit
 
 # for typescript projects also add
 yarn add -D ts-jest

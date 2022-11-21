@@ -10,6 +10,9 @@ inputs:
     description: 'which node version to use'
     required: false
     default: 'latest'
+  codeCovSecret:
+    description: 'the secret for codecov'
+    required: false
 
 runs:
   using: 'composite'
@@ -42,4 +45,4 @@ runs:
       if: ${{ inputs.testSuite == 'jest' }}
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+        token: ${{ inputs.codeCovSecret }}

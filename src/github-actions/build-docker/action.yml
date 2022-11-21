@@ -1,0 +1,66 @@
+name: 'Build Docker'
+description: 'standardized build of Docker'
+author: 'david@allido.io'
+
+inputs:
+  packageName:
+    description: 'the package to build'
+    required: true
+  nodeVersion:
+    description: 'which node version to use'
+    required: false
+    default: 'latest'
+  namespace:
+    description: 'the monorepo namespace'
+    required: false
+    default: 'undefined'
+  dockerfile:
+    description: 'the location and name of the dockerfile'
+    required: true
+  digitaloceanSecret:
+    description: 'the secret for digital ocean'
+    required: true
+  digitaloceanRegistry:
+    description: 'the name of the registry to use'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ inputs.digitaloceanSecret  }}
+
+    - name: Login to Registry
+      shell: bash
+      run: doctl registry login
+
+    - name: Get built artifact
+      if: ${{ inputs.namespace == 'undefined' }}
+      uses: actions/download-artifact@master
+      with:
+        name: ${{ inputs.packageName }}-build-${{ github.sha }}
+        path: .dist
+
+    - name: Get built artifact for ${{ inputs.packageName }} in monorepo
+      if: ${{ inputs.namespace != 'undefined' }}
+      uses: actions/download-artifact@master
+      with:
+        name: ${{ inputs.packageName }}-build-${{ github.sha }}
+        path: packages/${{ inputs.packageName }}/.dist
+
+    - name: Build Dockerfile for ${{ inputs.packageName }}
+      shell: bash
+      run: docker build -t ${{ inputs.projectName }}:latest -f ${{ inputs.dockerfile }} .
+
+    - name: Tag Docker Images
+      shell: bash
+      run: |
+        PKG_VERSION=$(cat ./packages/${{ inputs.projectname }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
+        docker tag ${{ inputs.projectName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}:$PKG_VERSION
+        docker tag ${{ inputs.projectName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}:latest
+
+    - name: Push Docker Images
+      shell: bash
+      run: docker push --all-tags ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}

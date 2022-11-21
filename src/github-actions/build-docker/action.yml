@@ -52,15 +52,15 @@ runs:
 
     - name: Build Dockerfile for ${{ inputs.packageName }}
       shell: bash
-      run: docker build -t ${{ inputs.projectName }}:latest -f ${{ inputs.dockerfile }} .
+      run: docker build -t ${{ inputs.packageName }}:latest -f ${{ inputs.dockerfile }} .
 
     - name: Tag Docker Images
       shell: bash
       run: |
-        PKG_VERSION=$(cat ./packages/${{ inputs.projectname }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
-        docker tag ${{ inputs.projectName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}:$PKG_VERSION
-        docker tag ${{ inputs.projectName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}:latest
+        PKG_VERSION=$(cat ./packages/${{ inputs.packageName }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
+        docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:$PKG_VERSION
+        docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:latest
 
     - name: Push Docker Images
       shell: bash
-      run: docker push --all-tags ${{ inputs.digitaloceanRegistry }}/${{ inputs.projectName }}
+      run: docker push --all-tags ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}

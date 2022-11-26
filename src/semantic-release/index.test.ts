@@ -15,7 +15,7 @@ describe('semantic release', () => {
     const result = semanticRelease({ publishToNpm: true });
 
     const yarnPlugin = result.plugins.find(
-      i => Array.isArray(i) && i[0] === '@suin/semantic-release-yarn',
+      i => Array.isArray(i) && i[0] === '@dmeents/semantic-release-yarn',
     );
 
     expect(yarnPlugin?.[1]).toEqual({ npmPublish: true });

@@ -22,12 +22,13 @@
   },
   "packageManager": "yarn@3.3.0",
   "scripts": {
-    "build": "rm -rf ./.dist && tsc --project tsconfig.build.json && node ./esbuild.js",
+    "build": "rm -rf ./.dist && tsc --project tsconfig.build.json && node ./esbuild.js && cp -r ./src/tsconfig ./.dist/tsconfig",
     "release": "semantic-release",
     "test": "jest",
     "test:coverage": "jest --coverage -ci --bail --silent --forceExit"
   },
   "devDependencies": {
+    "@dmeents/semantic-release-yarn": "^1.0.0",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.6",

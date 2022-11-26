@@ -438,7 +438,7 @@ __metadata:
     "@semantic-release/git": 10.0.1
     "@semantic-release/github": 8.0.6
     "@semantic-release/release-notes-generator": 10.0.3
-    "@suin/semantic-release-yarn": 1.1.0
+    "@suin/semantic-release-yarn": ^1.1.0
     "@types/jest": 29.2.3
     "@types/lodash": 4.14.190
     "@types/node": 18.11.9
@@ -1389,7 +1389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@suin/semantic-release-yarn@npm:1.1.0":
+"@suin/semantic-release-yarn@npm:^1.1.0":
   version: 1.1.0
   resolution: "@suin/semantic-release-yarn@npm:1.1.0"
   dependencies:

@@ -76,7 +76,7 @@ module.exports = { ...prettier() };
 # dependencies
 
 # for all projects
-yarn add -D semantic-release @semantic-release/git @semantic-release/github @suin/semantic-release-yarn @semantic-release/commit-analyzer @semantic-release/release-notes-generator
+yarn add -D semantic-release @semantic-release/git @semantic-release/github @dmeents/semantic-release-yarn @semantic-release/commit-analyzer @semantic-release/release-notes-generator
 
 # for monorepos (in each package add all previous dependencies and this one)
 yarn add -D semantic-release-monorepo

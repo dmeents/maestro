@@ -433,7 +433,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dmeents/maestro@workspace:."
   dependencies:
-    "@dmeents/semantic-release-yarn": ^1.0.8
+    "@dmeents/semantic-release-yarn": ^1.0.9
     "@semantic-release/commit-analyzer": 9.0.2
     "@semantic-release/git": 10.0.1
     "@semantic-release/github": 8.0.6
@@ -461,15 +461,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@dmeents/semantic-release-yarn@npm:^1.0.8":
-  version: 1.0.8
-  resolution: "@dmeents/semantic-release-yarn@npm:1.0.8"
+"@dmeents/semantic-release-yarn@npm:^1.0.9":
+  version: 1.0.9
+  resolution: "@dmeents/semantic-release-yarn@npm:1.0.9"
   dependencies:
     "@semantic-release/error": ^3.0.0
     execa: ^5.1.1
     read-pkg: ^5.2.0
     semver: ^7.3.8
-  checksum: 739c727708d7537107851fbcffea6023cf5a461f1ad32d2768f6b577a18905fad1f981847b511e68919651205b200392c8f1038639f5a4c4d15120e5d8e1c668
+  checksum: 70d4b02690265be1c4734614be9d0441ad26c3b031d91576a2925efdda4578d93d0a99af16f514807f73bb9dabba43f2b6898522fb9810178b759ed7dcaa154a
   languageName: node
   linkType: hard
 

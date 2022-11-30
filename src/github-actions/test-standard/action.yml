@@ -16,6 +16,9 @@ inputs:
   npmToken:
     description: 'the npm token'
     required: false
+  foresightToken:
+    description: 'the foresight token'
+    required: false
 
 runs:
   using: 'composite'
@@ -45,6 +48,16 @@ runs:
       env:
         NPM_TOKEN: ${{ inputs.npmToken }}
       run: yarn test:coverage
+
+    - name: Upload Coverage to Foresight
+      uses: runforesight/foresight-test-kit-action@v1
+      if: ${{ inputs.testSuite == 'jest' }}
+      with:
+        api_key: inputs.foresightToken
+        test_format: JUNIT
+        test_framework: JUNIT
+        coverage_format: JACOCO/XML
+        coverage_path: ./junit.xml
 
     - name: Upload coverage reports to Codecov
       if: ${{ inputs.testSuite == 'jest' }}

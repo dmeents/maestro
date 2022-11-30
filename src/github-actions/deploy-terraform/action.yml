@@ -26,6 +26,9 @@ inputs:
   backendKey:
     description: 'the bucket name of the remote terraform config'
     required: true
+  containerImage:
+    description: 'the docker image to deploy'
+    required: true
 
 runs:
   using: 'composite'
@@ -52,4 +55,5 @@ runs:
       shell: bash
       run: |
         terraform -chdir=${{ inputs.terraformConfigPath }} plan \
+          -var "container_image=${{ inputs.containerImage }}"
           -var-file=env.${{ inputs.environment }}.tfvars

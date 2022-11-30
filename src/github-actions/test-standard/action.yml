@@ -49,20 +49,6 @@ runs:
         NPM_TOKEN: ${{ inputs.npmToken }}
       run: yarn test:coverage
 
-    - name: log file structure
-      shell: bash
-      run: ls -lart
-
-    - name: Upload Coverage to Foresight
-      uses: runforesight/foresight-test-kit-action@v1
-      if: ${{ inputs.testSuite == 'jest' }}
-      with:
-        api_key: inputs.foresightToken
-        test_format: JUNIT
-        test_framework: JEST
-        coverage_format: COBERTURA/XML
-        coverage_path: ./junit.xml
-
     - name: Upload coverage reports to Codecov
       if: ${{ inputs.testSuite == 'jest' }}
       uses: codecov/codecov-action@v3

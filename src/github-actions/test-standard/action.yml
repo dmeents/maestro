@@ -55,7 +55,7 @@ runs:
       with:
         api_key: inputs.foresightToken
         test_format: JUNIT
-        test_framework: JUNIT
+        test_framework: JEST
         coverage_format: JACOCO/XML
         coverage_path: ./junit.xml
 

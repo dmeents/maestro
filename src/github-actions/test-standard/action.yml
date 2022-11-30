@@ -60,8 +60,8 @@ runs:
         api_key: inputs.foresightToken
         test_format: JUNIT
         test_framework: JEST
-        coverage_format: JACOCO/XML
-        coverage_path: junit.xml
+        coverage_format: COBERTURA/XML
+        coverage_path: ./junit.xml
 
     - name: Upload coverage reports to Codecov
       if: ${{ inputs.testSuite == 'jest' }}

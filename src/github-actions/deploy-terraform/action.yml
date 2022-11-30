@@ -43,13 +43,13 @@ runs:
     - name: Init terraform
       shell: bash
       run: |
-        terraform init \
-          -chdir=${{ inputs.terraformConfigPath }}
+        terraform -chdir=${{ inputs.terraformConfigPath }} init \
           -backend-config="access_key=${{ inputs.backendAccessKey }}"
           -backend-config="secret_key=${{ inputs.backendSecretKey }}"
           -backend-config="key=${{ inputs.backendKey }}"
 
-    - name: Run terraform init
+    - name: Run terraform plan
       shell: bash
       run: |
-        terraform plan -var-file=env.${{ inputs.environment }}.tfvars
+        terraform -chdir=${{ inputs.terraformConfigPath }} plan \
+          -var-file=env.${{ inputs.environment }}.tfvars

@@ -38,7 +38,7 @@ jobs:
         uses: ./src/github-actions/test-standard
         with:
           testSuite: ${{ matrix.suite }}
-          foresightKey: ${{ secrets.FORESIGHT_TOKEN }}
+          foresightToken: ${{ secrets.FORESIGHT_TOKEN }}
           codeCovSecret: ${{ secrets.CODECOV_TOKEN }}
 
   publish:

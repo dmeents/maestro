@@ -29,8 +29,6 @@ runs:
   steps:
     - name: Setup terraform
       uses: hashicorp/setup-terraform@v2
-      with:
-        terraform_version: latest
 
     - name: Set var-file
       shell: bash

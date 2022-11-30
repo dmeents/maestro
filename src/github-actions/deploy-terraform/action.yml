@@ -2,12 +2,6 @@ name: 'Deploy Terraform'
 description: 'standardized deployment job for terraform'
 
 inputs:
-  codeCovSecret:
-    description: 'the secret for codecov'
-    required: false
-  foresightToken:
-    description: 'the foresight token'
-    required: false
   environment:
     description: 'what environment to deploy to'
     required: true

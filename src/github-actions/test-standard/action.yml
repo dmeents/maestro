@@ -49,6 +49,10 @@ runs:
         NPM_TOKEN: ${{ inputs.npmToken }}
       run: yarn test:coverage
 
+    - name: log file structure
+      shell: bash
+      run: ls -lart
+
     - name: Upload Coverage to Foresight
       uses: runforesight/foresight-test-kit-action@v1
       if: ${{ inputs.testSuite == 'jest' }}

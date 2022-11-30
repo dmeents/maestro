@@ -1,0 +1,55 @@
+name: 'Deploy Terraform'
+description: 'standardized deployment job for terraform'
+
+inputs:
+  codeCovSecret:
+    description: 'the secret for codecov'
+    required: false
+  foresightToken:
+    description: 'the foresight token'
+    required: false
+  environment:
+    description: 'what environment to deploy to'
+    required: true
+  envFile:
+    description: 'the env file content to use'
+    required: true
+  terraformConfigPath:
+    description: 'the path to the terraform config files'
+    required: true
+  backendAccessKey:
+    description: 'the backend-config access key to use'
+    required: true
+  backendSecretKey:
+    description: 'the backend-config secret key to use'
+    required: true
+  backendKey:
+    description: 'the bucket name of the remote terraform config'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: latest
+
+    - name: Set var-file
+      shell: bash
+      run: |
+        echo ${{ inputs.envFile }} > ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
+
+    - name: Init terraform
+      shell: bash
+      run: |
+        terraform init \
+          -chdir=${{ inputs.terraformConfigPath }}
+          -backend-config="access_key=${{ inputs.backendAccessKey }}"
+          -backend-config="secret_key=${{ inputs.backendSecretKey }}"
+          -backend-config="key=${{ inputs.backendKey }}"
+
+    - name: Run terraform init
+      shell: bash
+      run: |
+        terraform plan -var-file=env.${{ inputs.environment }}.tfvars

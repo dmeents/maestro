@@ -39,6 +39,8 @@ runs:
       shell: bash
       run: |
         terraform -chdir=${{ inputs.terraformConfigPath }} init \
+          -input=false
+          -no-color
           -backend-config="access_key=${{ inputs.backendAccessKey }}"
           -backend-config="secret_key=${{ inputs.backendSecretKey }}"
           -backend-config="key=${{ inputs.backendKey }}"
@@ -47,5 +49,7 @@ runs:
       shell: bash
       run: |
         terraform -chdir=${{ inputs.terraformConfigPath }} plan \
+          -input=false
+          -compact-warnings
           -var "container_image=${{ inputs.containerImage }}"
           -var-file=env.${{ inputs.environment }}.tfvars

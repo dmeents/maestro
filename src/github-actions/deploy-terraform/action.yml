@@ -33,9 +33,14 @@ runs:
     - name: Set var-file
       shell: bash
       run: |
-        echo "${{ inputs.envFile }}" > ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
+        echo '${{ inputs.envFile }}' > ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
         cat ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
         ls -lart ${{ inputs.terraformConfigPath }}
+
+    - name: Verify terraform
+      shell: bash
+      run: |
+        terraform fmt -check
 
     - name: Init terraform
       shell: bash
@@ -47,6 +52,11 @@ runs:
           -backend-config='secret_key=${{ inputs.backendSecretKey }}' \
           -backend-config='key=${{ inputs.backendKey }}'
 
+    - name: Validate terraform
+      shell: bash
+      run: |
+        terraform validate -no-color
+
     - name: Run terraform plan
       shell: bash
       run: |
@@ -55,3 +65,9 @@ runs:
           -compact-warnings \
           -var 'container_image=${{ inputs.containerImage }}' \
           -var-file=env.${{ inputs.environment }}.tfvars
+
+    - name: Terraform Plan Status
+      if: steps.plan.outcome == 'failure'
+      shell: bash
+      run: |
+        exit 1

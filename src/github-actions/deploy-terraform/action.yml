@@ -99,3 +99,8 @@ runs:
       shell: bash
       run: |
         exit 1
+
+    - name: Apply terraform
+      shell: bash
+      run: |
+        terraform apply -auto-approve -input=false -var-file env.${{ inputs.environment }}.tfvars

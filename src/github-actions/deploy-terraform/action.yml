@@ -30,19 +30,14 @@ runs:
     - name: Setup terraform
       uses: hashicorp/setup-terraform@v2
 
-    - name: Set var-file
-      shell: bash
-      run: |
-        echo '${{ inputs.envFile }}' > ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
-        cat ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
-        ls -lart ${{ inputs.terraformConfigPath }}
-
     - name: Verify terraform
+      id: verify
       shell: bash
       run: |
         terraform fmt -check
 
     - name: Init terraform
+      id: init
       shell: bash
       run: |
         terraform -chdir=${{ inputs.terraformConfigPath }} init \
@@ -53,18 +48,49 @@ runs:
           -backend-config='key=${{ inputs.backendKey }}'
 
     - name: Validate terraform
+      id: validate
       shell: bash
       run: |
         terraform validate -no-color
 
     - name: Run terraform plan
+      id: plan
       shell: bash
+      continue-on-error: true
       run: |
         terraform -chdir=${{ inputs.terraformConfigPath }} plan \
           -input=false \
           -compact-warnings \
-          -var 'container_image=${{ inputs.containerImage }}' \
-          -var-file=env.${{ inputs.environment }}.tfvars
+          -var 'container_image=${{ inputs.containerImage }}'
+
+    - name: Update Pull Request
+      uses: actions/github-script@v6
+      env:
+        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+          #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+          #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+          #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+          
+          <details><summary>Show Plan</summary>
+          
+          \`\`\`\n
+          ${process.env.PLAN}
+          \`\`\`
+          
+          </details>
+          
+          *Pushed by: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
+          
+          github.rest.issues.createComment({
+          issue_number: context.issue.number,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          body: output
+          })
 
     - name: Terraform Plan Status
       if: steps.plan.outcome == 'failure'

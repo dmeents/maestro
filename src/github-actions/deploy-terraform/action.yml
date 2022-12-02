@@ -2,12 +2,6 @@ name: 'Deploy Terraform'
 description: 'standardized deployment job for terraform'
 
 inputs:
-  environment:
-    description: 'what environment to deploy to'
-    required: true
-  envFile:
-    description: 'the env file content to use'
-    required: true
   terraformConfigPath:
     description: 'the path to the terraform config files'
     required: true

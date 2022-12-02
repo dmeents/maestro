@@ -2,6 +2,9 @@ name: 'Deploy Terraform'
 description: 'standardized deployment job for terraform'
 
 inputs:
+  githubToken:
+    description: 'the github token'
+    required: true
   terraformConfigPath:
     description: 'the path to the terraform config files'
     required: true
@@ -63,7 +66,7 @@ runs:
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ inputs.GITHUB_TOKEN }}
         script: |
           const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
           #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`

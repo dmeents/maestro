@@ -31,6 +31,7 @@ runs:
       id: verify
       shell: bash
       run: |
+        echo ${{ env }}
         terraform fmt -check
 
     - name: Init terraform

@@ -62,7 +62,7 @@ runs:
           -input=false \
           -compact-warnings \
           -var 'container_image=${{ inputs.containerImage }}' \
-          -var-file ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
+          -var-file env.${{ inputs.environment }}.tfvars
 
     - name: Update Pull Request
       uses: actions/github-script@v6

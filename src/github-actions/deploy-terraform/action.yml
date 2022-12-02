@@ -106,4 +106,5 @@ runs:
         terraform -chdir=${{ inputs.terraformConfigPath }} apply \
           -auto-approve \
           -input=false \
+          -var 'container_image=${{ inputs.containerImage }}' \
           -var-file env.${{ inputs.environment }}.tfvars

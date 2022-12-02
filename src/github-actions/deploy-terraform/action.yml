@@ -34,6 +34,8 @@ runs:
       shell: bash
       run: |
         echo ${{ inputs.envFile }} > ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
+        cat ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
+        ls -lart
 
     - name: Init terraform
       shell: bash

@@ -2,6 +2,9 @@ name: 'Deploy Terraform'
 description: 'standardized deployment job for terraform'
 
 inputs:
+  environment:
+    description: 'the environment to deploy to'
+    required: true
   githubToken:
     description: 'the github token'
     required: true
@@ -59,6 +62,7 @@ runs:
           -input=false \
           -compact-warnings \
           -var 'container_image=${{ inputs.containerImage }}'
+          -var-file ${{ inputs.terraformConfigPath }}/env.${{ inputs.environment }}.tfvars
 
     - name: Update Pull Request
       uses: actions/github-script@v6

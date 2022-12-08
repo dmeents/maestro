@@ -2,29 +2,26 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
-    "target": "esnext",
+    "downlevelIteration": true,
+    "emitDeclarationOnly": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "lib": [
       "esnext"
     ],
     "module": "esnext",
-    "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "isolatedModules": true,
     "moduleResolution": "node",
     "noImplicitAny": false,
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "emitDeclarationOnly": true,
-    "baseUrl": ".",
-    "outDir": ".dist"
+    "target": "esnext"
   },
-  "include": [
-    "./src/**/*"
-  ]
 }

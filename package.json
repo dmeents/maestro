@@ -20,7 +20,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "packageManager": "yarn@3.3.0",
+  "packageManager": "yarn@3.3.1",
   "scripts": {
     "build": "rm -rf ./.dist && tsc --project tsconfig.build.json && node ./esbuild.js && cp -r ./src/tsconfig ./.dist/tsconfig",
     "release": "semantic-release",

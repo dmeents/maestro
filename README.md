@@ -30,7 +30,6 @@ yarn add -D typescript
 ```
 
 ```json
-// tsconfig.json
 {
   "extends": "node_modules/@dmeents/maestro/.dist/tsconfig/main.json"
 }

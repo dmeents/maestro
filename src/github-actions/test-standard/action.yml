@@ -16,9 +16,6 @@ inputs:
   npmToken:
     description: 'the npm token'
     required: false
-  foresightToken:
-    description: 'the foresight token'
-    required: false
 
 runs:
   using: 'composite'

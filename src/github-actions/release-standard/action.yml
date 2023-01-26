@@ -70,6 +70,14 @@ runs:
         NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} release
 
     - name: Save new package version
+      if: ${{ inputs.namespace == 'undefined' }}
+      shell: bash
+      run: |
+        PKG_VERSION=$(cat ./package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
+        echo "${{ inputs.packageName }}_VERSION=$PKG_VERSION" >> $GITHUB_OUTPUT
+
+    - name: Save new package version for monorepo
+      if: ${{ inputs.namespace != 'undefined' }}
       shell: bash
       run: |
         PKG_VERSION=$(cat ./packages/${{ inputs.packageName }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')

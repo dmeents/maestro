@@ -23,9 +23,6 @@ inputs:
   digitaloceanRegistry:
     description: 'the name of the registry to use'
     required: true
-  versionTag:
-    description: 'the version to tag'
-    required: true
 
 runs:
   using: 'composite'

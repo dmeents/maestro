@@ -68,3 +68,17 @@ runs:
       shell: bash
       run: |
         NPM_TOKEN=${{ inputs.npmToken }} GH_TOKEN=${{ inputs.githubToken }} yarn workspace ${{ inputs.namespace }}/${{ inputs.packageName }} release
+
+    - name: Set version artifact
+      shell: bash
+      run: |
+        PKG_VERSION=$(cat ./packages/${{ inputs.packageName }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
+        echo $PKG_VERSION >> ./pkg-version
+
+    - name: Save version artifact
+      uses: actions/upload-artifact@master
+      with:
+        if-no-files-found: warn
+        name: ${{ inputs.packageName }}-version-${{ github.sha }}
+        path: ./pkg-version
+        retention-days: 5

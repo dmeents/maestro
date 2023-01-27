@@ -63,7 +63,7 @@ runs:
     - name: Tag Docker Images for monorepo
       shell: bash
       run: |
-        VERSION=$(cat ./pk-version)
+        VERSION=$(cat ./pkg-version)
         docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:$VERSION
         docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:latest
 

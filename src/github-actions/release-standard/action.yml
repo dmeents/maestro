@@ -73,7 +73,7 @@ runs:
       shell: bash
       run: |
         PKG_VERSION=$(cat ./packages/${{ inputs.packageName }}/package.json | grep version | head -1 | awk -F= "{ print $2 }" | sed 's/[version:,\",]//g' | tr -d '[[:space:]]')
-        echo $PKG_VERSION >> ./pkg-version
+        echo $PKG_VERSION >> ./pkg-version.txt
 
     - name: Save version artifact
       uses: actions/upload-artifact@master

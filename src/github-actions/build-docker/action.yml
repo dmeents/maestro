@@ -54,7 +54,7 @@ runs:
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-version-${{ github.sha }}
-        path: ./pkg-version
+        path: ./pkg-version.txt
 
     - name: Build Dockerfile for ${{ inputs.packageName }}
       shell: bash

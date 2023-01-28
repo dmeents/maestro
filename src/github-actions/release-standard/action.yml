@@ -80,5 +80,5 @@ runs:
       with:
         if-no-files-found: warn
         name: ${{ inputs.packageName }}-version-${{ github.sha }}
-        path: ./pkg-version
+        path: ./pkg-version.txt
         retention-days: 5

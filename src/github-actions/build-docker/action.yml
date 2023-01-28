@@ -54,7 +54,7 @@ runs:
       uses: actions/download-artifact@master
       with:
         name: ${{ inputs.packageName }}-version-${{ github.sha }}
-        path: ./pkg-version.txt
+        path: ./pkg-version
 
     - name: Build Dockerfile for ${{ inputs.packageName }}
       shell: bash
@@ -63,7 +63,7 @@ runs:
     - name: Tag Docker Images for monorepo
       shell: bash
       run: |
-        VERSION=$(cat ./pkg-version.txt)
+        VERSION=$(cat ./pkg-version/pkg-version.txt)
         docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:$VERSION
         docker tag ${{ inputs.packageName }}:latest ${{ inputs.digitaloceanRegistry }}/${{ inputs.packageName }}:latest
 

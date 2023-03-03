@@ -5,6 +5,9 @@ inputs:
   environment:
     description: 'the environment to deploy to'
     required: true
+  version:
+    description: 'the version to deploy'
+    required: true
   githubToken:
     description: 'the github token'
     required: true
@@ -62,6 +65,7 @@ runs:
           -input=false \
           -compact-warnings \
           -var 'container_image=${{ inputs.containerImage }}' \
+          -var 'version=${{ inputs.version }}' \
           -var-file env.${{ inputs.environment }}.tfvars
 
     - name: Update Pull Request
@@ -107,4 +111,5 @@ runs:
           -auto-approve \
           -input=false \
           -var 'container_image=${{ inputs.containerImage }}' \
+          -var 'version=${{ inputs.version }}' \
           -var-file env.${{ inputs.environment }}.tfvars

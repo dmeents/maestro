@@ -65,7 +65,7 @@ runs:
           -input=false \
           -compact-warnings \
           -var 'container_image=${{ inputs.containerImage }}' \
-          -var 'version=${{ inputs.version }}' \
+          -var 'app_version=${{ inputs.version }}' \
           -var-file env.${{ inputs.environment }}.tfvars
 
     - name: Update Pull Request
@@ -111,5 +111,5 @@ runs:
           -auto-approve \
           -input=false \
           -var 'container_image=${{ inputs.containerImage }}' \
-          -var 'version=${{ inputs.version }}' \
+          -var 'app_version=${{ inputs.version }}' \
           -var-file env.${{ inputs.environment }}.tfvars

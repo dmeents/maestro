@@ -39,6 +39,10 @@ runs:
         node-version: ${{ inputs.nodeVersion }}
         cache: 'yarn'
 
+    - name: Yarn install
+      shell: bash
+      run: yarn install
+
     - name: Get built artifact
       if: ${{ inputs.namespace == 'undefined' }}
       uses: actions/download-artifact@master
@@ -52,10 +56,6 @@ runs:
       with:
         name: ${{ inputs.packageName }}-build-${{ github.sha }}
         path: packages/${{ inputs.packageName }}/.dist
-
-    - name: Yarn install
-      shell: bash
-      run: yarn install
 
     - name: Release package
       if: ${{ inputs.namespace == 'undefined' }}

@@ -444,7 +444,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": 5.57.0
     "@typescript-eslint/parser": 5.57.0
     esbuild: 0.17.14
-    esbuild-node-externals: 1.6.0
+    esbuild-node-externals: 1.7.0
     eslint: 8.37.0
     eslint-config-prettier: 8.8.0
     eslint-plugin-jest: 27.2.1
@@ -3445,15 +3445,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-node-externals@npm:1.6.0":
-  version: 1.6.0
-  resolution: "esbuild-node-externals@npm:1.6.0"
+"esbuild-node-externals@npm:1.7.0":
+  version: 1.7.0
+  resolution: "esbuild-node-externals@npm:1.7.0"
   dependencies:
     find-up: ^5.0.0
     tslib: ^2.4.1
   peerDependencies:
-    esbuild: 0.12 - 0.16
-  checksum: dacc96228e610a391318c4fa46b2dfd2a923ab5819bff1b1e5ae92799d1eda18a8efc1836216a157fd5ab6a7bf65596f231e261b1bf18bfc23f5b7c850ee8c07
+    esbuild: 0.12 - 0.17
+  checksum: 240f33aafd51abf76d01d04332baf30afa2cfdee4f675df8c79d2b7de1ad3734ea44f467472f2df9f1dd67a325ea9ca18a9121bea4781fdbb131bf4d7d18b799
   languageName: node
   linkType: hard
 

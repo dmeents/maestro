@@ -20,7 +20,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.0",
   "scripts": {
     "build": "rm -rf ./.dist && tsc --project tsconfig.build.json && node ./esbuild.js && cp -r ./src/tsconfig ./.dist/tsconfig",
     "release": "semantic-release",
@@ -51,6 +51,6 @@
     "prettier": "2.8.8",
     "semantic-release": "21.0.2",
     "ts-jest": "29.1.0",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   }
 }

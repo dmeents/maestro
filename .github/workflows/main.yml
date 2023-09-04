@@ -9,7 +9,7 @@ jobs:
         uses: runforesight/foresight-workflow-kit-action@v1
         with:
          api_key: ${{ secrets.FORESIGHT_TOKEN }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build Package
         uses: ./src/github-actions/build-standard
         with:
@@ -28,7 +28,7 @@ jobs:
         uses: runforesight/foresight-workflow-kit-action@v1
         with:
           api_key: ${{ secrets.FORESIGHT_TOKEN }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get built artifact
         uses: actions/download-artifact@master
         with:
@@ -49,7 +49,7 @@ jobs:
         uses: runforesight/foresight-workflow-kit-action@v1
         with:
           api_key: ${{ secrets.FORESIGHT_TOKEN }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Publish Package
         uses: ./src/github-actions/release-standard
         with:
